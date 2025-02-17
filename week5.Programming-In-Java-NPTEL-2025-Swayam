@@ -1,0 +1,91 @@
+Programming Assignment
+Question 1
+An interface Number is defined in the following program. You have to declare a class A, which will implement the interface Number. Note that the method findSqr(n) will return the square of the number n.
+
+Solution:
+
+class A implements Number {
+	 int i, square;
+	 public int findSqr(int i) {
+		 square=i*i;
+            return square;
+      }
+}
+Question 2
+This program is to find the GCD (greatest common divisor) of two integers writing a recursive function findGCD(n1,n2). Your function should return -1, if the argument(s) is(are) other than positive number(s).
+
+Solution:
+
+class B implements GCD {
+    int n1,n2;
+
+    public int findGCD(int n1, int n2){
+		if(n1==0&& n2==0) {
+			return -1;
+		}
+		else if(n2 == 0){
+			return n1;
+		}
+
+		else {
+			return findGCD(n2, n1%n2);
+		}
+      }
+ }
+Question 3
+Complete the code segment to catch the ArithmeticException in the following, if any. On the occurrence of such an exception, your program should print “Exception caught: Division by zero.” If there is no such exception, it will print the result of division operation on two integer values.
+
+Solution:
+
+int result;
+       a = input.nextInt();
+       b = input.nextInt();
+
+         try {
+              result = a/b;
+              System.out.print(result);
+     	     }
+          catch (ArithmeticException e) {
+             System.out.print("Exception caught: Division by zero.");
+          }
+Question 4
+In the following program, an array of integer data to be initialized. During the initialization, if a user enters a value other than integer value, then it will throw InputMismatchException exception. On the occurrence of such an exception, your program should print “You entered bad data.” If there is no such exception it will print the total sum of the array.
+
+Solution:
+
+try
+      {
+        for(int i=0;i<length;i++)
+        {
+          int userInput=sc.nextInt();
+          name[i] = userInput;
+          sum=sum+name[i];
+        }
+        System.out.print(sum);
+       }
+      catch(InputMismatchException e)
+      {
+        System.out.print("You entered bad data.");
+      }
+Question 5
+In the following program, there may be multiple exceptions. You have to complete the code using only one try-catch block to handle all the possible exceptions.
+For example, if user’s input is 1, then it will throw and catch “java.lang.NullPointerException“.
+
+Solution:
+
+try{
+  switch (i)
+  {
+    case 0 :  int zero = 0;
+    j = 92/ zero;
+    break;
+    case 1 :  int b[ ] = null;
+    j = b[0] ;
+    break;
+    default:  System.out.print("No exception");
+  }
+}
+catch (Exception e)
+{
+  System.out.print(e) ;
+}
