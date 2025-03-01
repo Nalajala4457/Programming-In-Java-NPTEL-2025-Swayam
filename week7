@@ -1,0 +1,160 @@
+Programming Assignment 1
+
+    // Constructor to initialize two numbers
+    public W07_1(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    // Method to add two numbers
+    public int add() {
+        return num1 + num2;
+    }
+
+    // Method to subtract two numbers
+    public int subtract() {
+        return num1 - num2;
+    }
+
+    // Method to multiply two numbers
+    public int multiply() {
+        return num1 * num2;
+    }
+
+    // Method to divide two numbers with error handling
+    public String divide() {
+        if (num2 == 0) {
+            return "Cannot divide by zero!";
+        }
+        return String.valueOf(num1 / num2);
+    }
+
+
+
+
+######################################################################
+
+Programming Assignment 2
+    // Constructor initializing the counter to zero
+    public Counter() {
+        this.count = 0;
+    }
+
+    // Method to increment the counter
+    public void increment() {
+        count++;
+    }
+
+    // Method to decrement the counter (ensuring it doesn't go below zero)
+    public void decrement() {
+        if (count > 0) {
+            count--;
+        }
+    }
+
+    // Method to get the current value of the counter
+    public int getValue() {
+        return count;
+    }
+
+
+
+
+
+
+
+######################################################################
+Programming Assignment 3
+// Constructor to initialize name and salary
+public Employee(String name, double salary) {
+    this.name = name;
+    this.salary = salary;
+}
+
+// Method to return employee details in the required format
+public String getDetails() {
+    return "Employee: " + name + ", Salary: " + salary;
+}
+}
+
+
+
+
+
+
+
+######################################################################
+Programming Assignment 4
+
+// Method to find the maximum value in the array
+    public int getMax() {
+        int max = numbers[0]; // Initialize max with the first element of the array
+        for (int number : numbers) {
+            if (number > max) {
+                max = number; // Update max if a larger element is found
+            }
+        }
+        return max; // Return the maximum value
+    }
+
+    // Method to find the minimum value in the array
+    public int getMin() {
+        int min = numbers[0];
+        for (int number : numbers) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        return min;
+    }
+} // <-- This closing brace was missing
+
+
+
+
+
+
+
+######################################################################
+Programming Assignment 5
+
+// Step 2: Method to validate the password
+public boolean isValidPassword(String password) {
+    // Check if the password meets the length requirement
+    if (password.length() < 8) {
+        return false; // Password is too short
+    }
+
+    // Check if the password contains at least one uppercase letter
+    boolean hasUpperCase = false;
+    for (int i = 0; i < password.length(); i++) {
+        if (Character.isUpperCase(password.charAt(i))) {
+            hasUpperCase = true;
+            break; // Exit the loop once an uppercase letter is found
+        }
+    }
+    if (!hasUpperCase) {
+        return false; // Password does not contain an uppercase letter
+    }
+
+    // Check if the password contains at least one digit
+    boolean hasDigit = false;
+    for (int i = 0; i < password.length(); i++) {
+        if (Character.isDigit(password.charAt(i))) {
+            hasDigit = true;
+            break; // Exit the loop once a digit is found
+        }
+    }
+    if (!hasDigit) {
+        return false; // Password does not contain a digit
+    }
+
+    // If all conditions are met, the password is valid
+    return true;
+}
+
+
+
+
+
+
